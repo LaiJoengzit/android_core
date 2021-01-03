@@ -20,8 +20,17 @@ dependencies {
   compile "org.ros.rosjava_messages:sensor_msgs:[1.12,1.13)"
   compile 'org.ros.rosjava_core:rosjava_geometry:[0.3,0.4)'
   compile 'org.ros.rosjava_messages:visualization_msgs:[1.12,1.13)'
+  compile 'org.ros.rosjava_messages:std_msgs:0.5.11'
+  compile 'org.ros.rosjava_messages:geometry_msgs'
+  compile 'org.ros.rosjava_messages:nav_msgs'
+  compile 'org.ros.rosjava_messages:tf2_msgs'
   compile "com.android.support:appcompat-v7:28.0.0"
   compile 'com.android.support:support-v4:28.0.0'
+  compile "com.google.guava:guava:30.1-android"
+  //compile group: 'org.jboss.netty', name: 'netty', version: '3.2.9.Final'
+  //noinspection DuplicatePlatformClasses
+  compile group: 'org.apache.commons', name: 'com.springsource.org.apache.commons.logging', version: '1.1.1'
+  compile 'org.ros.rosjava_bootstrap:message_generation:[0.2,0.3)'
 }
 
 apply plugin: "com.android.library"
@@ -34,5 +43,9 @@ android {
     targetSdkVersion 28
     versionCode 1
     versionName "1.0"
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
   }
 }
