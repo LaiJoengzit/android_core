@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="267dp">
+
+        <com.bot.android_etabotproj.DownloaderView
+            android:id="@+id/ROStext1"
+            android:layout_width="396dp"
+            android:layout_height="112dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.466"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.103" />
+
+        <com.bot.android_etabotproj.DownloaderView
+            android:id="@+id/ROStext2"
+            android:layout_width="395dp"
+            android:layout_height="129dp"
+            android:layout_marginTop="56dp"
+            android:text="org.ros.android.view.RosTextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.437"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ROStext1"
+            app:layout_constraintVertical_bias="1.0" />
+    </android.support.constraint.ConstraintLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="32dp" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="84dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="102.5dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/vc0"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="102.5dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/vc1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="102.5dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/vc2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="102.5dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/vc3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp">
+
+                <TextView
+                    android:id="@+id/Quan"
+                    android:layout_width="307dp"
+                    android:layout_height="21dp"
+                    android:layout_marginStart="104dp"
+                    android:layout_marginLeft="104dp"
+                    android:layout_marginTop="16dp"
+                    android:text="TextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="410dp"
+                android:layout_height="274dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/vc4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="84dp"
+                    android:layout_weight="1"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/vc5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="84dp"
+                    android:layout_weight="1"
+                    android:text="TextView" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

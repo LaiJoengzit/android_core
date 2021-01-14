@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <org.ros.android.view.RosTextView
-        android:id="@+id/text"
+        android:id="@+id/ROStext1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="30dip" />

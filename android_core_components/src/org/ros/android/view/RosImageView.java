@@ -16,6 +16,7 @@
 
 package org.ros.android.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.AttributeSet;
@@ -34,7 +35,8 @@ import org.ros.node.topic.Subscriber;
  * @author ethan.rublee@gmail.com (Ethan Rublee)
  * @author damonkohler@google.com (Damon Kohler)
  */
-public class RosImageView<T> extends ImageView implements NodeMain {
+
+public class RosImageView<T> extends android.support.v7.widget.AppCompatImageView implements NodeMain {
 
   private String topicName;
   private String messageType;

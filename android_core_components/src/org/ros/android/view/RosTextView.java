@@ -30,7 +30,7 @@ import org.ros.node.topic.Subscriber;
 /**
  * @author damonkohler@google.com (Damon Kohler)
  */
-public class RosTextView<T> extends TextView implements NodeMain {
+public class RosTextView<T> extends android.support.v7.widget.AppCompatTextView implements NodeMain {
 
   private String topicName;
   private String messageType;
