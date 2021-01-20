@@ -145,7 +145,7 @@ public class MainActivity extends RosActivity implements SensorEventListener, Lo
         nodeConfiguration.setMasterUri(getMasterUri());
         nodeMainExecutor.execute(uploader, nodeConfiguration);
         nodeMainExecutor.execute(uploader2, nodeConfiguration);
-        while( ! uploader.getvecOn() && ! uploader2.getvecOn()){;}
+        while( ! uploader.getmsgOn() && ! uploader2.getmsgOn()){;}
         setUploader(uploader);
         setUploader(uploader2);
         // The RosTextView is also a NodeMain that must be executed in order to
@@ -162,7 +162,7 @@ public class MainActivity extends RosActivity implements SensorEventListener, Lo
         uploader.setMessageToStringCallable(new MessageCallable<Vector3Stamped, float[]>() {
             @Override
             public Vector3Stamped call(float[] injector) {
-                Vector3Stamped vecS = uploader.getVecS();
+                Vector3Stamped vecS = uploader.getMsg();
                 vecS.getHeader().setSeq(uploader.addSeq());
                 vecS.getHeader().setStamp(new WallTimeProvider().getCurrentTime());
                 vecS.getHeader().setFrameId("etabot");

@@ -15,21 +15,18 @@ import org.ros.namespace.GraphName;
 import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.topic.Publisher;
-import org.ros.time.WallTimeProvider;
-
-import geometry_msgs.Vector3Stamped;
 
 public class Uploader<T,S> extends AbstractNodeMain {
     private String topicName;
     private String GraphNameString ="android/Uploader";
-    T vecS;
+    T msg;
     private int loopPeriod;
     private int Seq;
     private S injector;
     private String messageType;
     private MessageCallable<T, S> callable;
     private boolean Switch = false;
-    private boolean vecOn = false;
+    private boolean msgOn = false;
 
     public Uploader() {
         this.topicName = "chatter";
@@ -56,10 +53,10 @@ public class Uploader<T,S> extends AbstractNodeMain {
 
     public void on(){this.Switch = true;}
 
-    public boolean getvecOn(){return vecOn;}
+    public boolean getmsgOn(){return msgOn;}
 
-    public T getVecS() {
-        return vecS;
+    public T getMsg() {
+        return msg;
     }
 
     public int getSeq() {
@@ -91,17 +88,17 @@ public class Uploader<T,S> extends AbstractNodeMain {
 
     public void onStart(ConnectedNode connectedNode) {
         final Publisher<T> publisher = connectedNode.newPublisher(this.topicName, messageType);
-        vecS= connectedNode.getTopicMessageFactory().newFromType(messageType);
-        Log.i("Publisher","vecS online");
-        vecOn=true;
+        msg = connectedNode.getTopicMessageFactory().newFromType(messageType);
+        Log.i("Publisher","msg online");
+        msgOn =true;
         connectedNode.executeCancellableLoop(new CancellableLoop() {
             protected void setup() {
                 Seq = 0;
             }
             protected void loop() throws InterruptedException {
                 if (injector != null && callable != null && Switch) {
-                    vecS = callable.call(injector);
-                    publisher.publish(vecS);
+                    msg = callable.call(injector);
+                    publisher.publish(msg);
                     //Log.i("Uploader", "Uploaded to " + topicName);
                 }
                 Thread.sleep(loopPeriod);
