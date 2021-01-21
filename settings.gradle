@@ -13,6 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+include ':android_usbtocan'
 include "android_etabotproj"
 include "android_core_components"
 include "android_acm_serial"

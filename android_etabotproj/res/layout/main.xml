@@ -14,43 +14,162 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
 
-    <android.support.constraint.ConstraintLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="267dp">
+        android:layout_height="wrap_content">
 
-        <com.bot.android_etabotproj.DownloaderView
-            android:id="@+id/ROStext1"
-            android:layout_width="396dp"
-            android:layout_height="112dp"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.466"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.103" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <com.bot.android_etabotproj.DownloaderView
-            android:id="@+id/ROStext2"
-            android:layout_width="395dp"
-            android:layout_height="129dp"
-            android:layout_marginTop="56dp"
-            android:text="org.ros.android.view.RosTextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.437"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ROStext1"
-            app:layout_constraintVertical_bias="1.0" />
-    </android.support.constraint.ConstraintLayout>
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="145dp">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="32dp" />
+                <com.bot.android_etabotproj.DownloaderView
+                    android:id="@+id/ROStext1"
+                    android:layout_width="185dp"
+                    android:layout_height="117dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-    <android.support.constraint.ConstraintLayout
+                <com.bot.android_etabotproj.DownloaderView
+                    android:id="@+id/ROStext2"
+                    android:layout_width="185dp"
+                    android:layout_height="117dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ROStext1"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="73dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="-2dp"
+                    android:layout_marginLeft="-2dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Linear:"
+                    app:layout_constraintStart_toStartOf="@+id/ROStext1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-2dp"
+                    android:layout_marginLeft="-2dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Rotation:"
+                    app:layout_constraintStart_toStartOf="@+id/ROStext2"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="74dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="31dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <Switch
+                        android:id="@+id/switchCamera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Show camera"
+                        android:textSize="10sp" />
+
+                    <Switch
+                        android:id="@+id/switchSensors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Show sensors"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/switchLocation"
+                    android:layout_width="189dp"
+                    android:layout_height="23dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Send location"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/LocationConstraint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/LocationToSend"
+                    android:layout_width="387dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="TextView"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/PoseOrders"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <com.bot.android_etabotproj.DownloaderView
+                    android:id="@+id/PoseOrders"
+                    android:layout_width="386dp"
+                    android:layout_height="23dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="No commands."
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <org.ros.android.view.camera.RosCameraPreviewView
+        android:id="@+id/RosCamera"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+    </org.ros.android.view.camera.RosCameraPreviewView>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/SensorsConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="210dp">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -137,7 +256,7 @@
 
             <LinearLayout
                 android:layout_width="410dp"
-                android:layout_height="274dp"
+                android:layout_height="85dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -155,6 +274,7 @@
                     android:text="TextView" />
 
             </LinearLayout>
+
         </LinearLayout>
 
     </android.support.constraint.ConstraintLayout>

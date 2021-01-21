@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Sensors">
+        <item >AM</item>
+        <item >RV</item>
+        <item >RV_q</item>
+        <item >GameRV</item>
+        <item >GeoRV</item>
+        <item >G</item>
+        <item >LAcc</item>
+    </string-array>
+</resources>

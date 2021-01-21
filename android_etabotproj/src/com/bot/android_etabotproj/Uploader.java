@@ -99,7 +99,7 @@ public class Uploader<T,S> extends AbstractNodeMain {
                 if (injector != null && callable != null && Switch) {
                     msg = callable.call(injector);
                     publisher.publish(msg);
-                    //Log.i("Uploader", "Uploaded to " + topicName);
+                    Log.i("Uploader", "Uploaded to " + topicName);
                 }
                 Thread.sleep(loopPeriod);
             }
